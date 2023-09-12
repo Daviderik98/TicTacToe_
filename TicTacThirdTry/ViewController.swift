@@ -68,10 +68,11 @@ class ViewController: UIViewController {
     func checkPlayers(btn_OnClick: UIButton){
         //Check which Player has their turn. Then call on of two functions which will print out either X or O
         switch(currentPlayer){
-        case 1: onTurnOne(buttonOne: btn_OnClick)
-            currentPlayer = 2
-        case 2: onTurnTwo(buttonTwo: btn_OnClick)
-            currentPlayer = 1
+        case 1:
+            onTurnOne(buttonOne: btn_OnClick)
+        case 2:
+            onTurnTwo(buttonTwo: btn_OnClick)
+            
         default : currentPlayer = 1
         }
         firstThreeRow = checkThreeRowOne()
@@ -90,7 +91,11 @@ class ViewController: UIViewController {
     func onTurnOne(buttonOne: UIButton){
         if(buttonOne.currentTitle != "X" && buttonOne.currentTitle != "O"){
             buttonOne.setTitle("X", for: .normal)
+            currentPlayer = 2
             
+        }
+        else{
+            gameOverseer.text = String(currentPlayer) + "YOU CANT CLICK THERE"
         }
         //Check if a clicked field already contains X or O. If not then it gets X
         gameOverseer.text = "Player 2, your turn."
@@ -104,6 +109,10 @@ class ViewController: UIViewController {
     func onTurnTwo(buttonTwo: UIButton){
         if(buttonTwo.currentTitle != "X" && buttonTwo.currentTitle != "O"){
             buttonTwo.setTitle("O", for: .normal)
+            currentPlayer = 1
+        }
+        else{
+            gameOverseer.text = String(currentPlayer) + "NO CLICKING ON THAT"
         }
         //Check if a clicked field already contains X or O. If not then it gets O
         gameOverseer.text = "Player 1, your turn."
@@ -185,13 +194,7 @@ class ViewController: UIViewController {
     
     
     
-    
-    
-    
-    
-    
-    
-    
+
     
     
     //Button Actions
