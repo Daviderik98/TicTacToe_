@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var gameOverseer: UILabel!
     
     
+    @IBOutlet weak var forSeparateTest: UILabel!
     //Button Components
     
     
@@ -95,7 +96,7 @@ class ViewController: UIViewController {
             
         }
         else{
-            gameOverseer.text = String(currentPlayer) + "YOU CANT CLICK THERE"
+            forSeparateTest.text = String(currentPlayer) + "YOU CANT CLICK THERE"
         }
         //Check if a clicked field already contains X or O. If not then it gets X
         gameOverseer.text = "Player 2, your turn."
@@ -112,7 +113,7 @@ class ViewController: UIViewController {
             currentPlayer = 1
         }
         else{
-            gameOverseer.text = String(currentPlayer) + "NO CLICKING ON THAT"
+            forSeparateTest.text = String(currentPlayer) + "NO CLICKING ON THAT"
         }
         //Check if a clicked field already contains X or O. If not then it gets O
         gameOverseer.text = "Player 1, your turn."
