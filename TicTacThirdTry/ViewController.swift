@@ -12,10 +12,18 @@ class ViewController: UIViewController {
     //Components
     
     @IBOutlet weak var gameOverseer: UILabel!
-    
-    
     @IBOutlet weak var forSeparateTest: UILabel!
-    //Button Components
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    //SPECIAL Button Components
     
     
     @IBOutlet weak var btnFirst: UIButton!
@@ -90,16 +98,19 @@ class ViewController: UIViewController {
     
     
     func onTurnOne(buttonOne: UIButton){
-        if(buttonOne.currentTitle != "X" && buttonOne.currentTitle != "O"){
-            buttonOne.setTitle("X", for: .normal)
-            currentPlayer = 2
-            
+        if(firstThreeRow == 0 && otherThreeRow == 0){
+            if(buttonOne.currentTitle != "X" && buttonOne.currentTitle != "O"){
+                buttonOne.setTitle("X", for: .normal)
+                currentPlayer = 2
+                
+            }
+            else{
+                forSeparateTest.text = String(currentPlayer) + "YOU CANT CLICK THERE"
+            }
+            //Check if a clicked field already contains X or O. If not then it gets X
+            gameOverseer.text = "Player 2, your turn."
         }
-        else{
-            forSeparateTest.text = String(currentPlayer) + "YOU CANT CLICK THERE"
-        }
-        //Check if a clicked field already contains X or O. If not then it gets X
-        gameOverseer.text = "Player 2, your turn."
+        
         
         
         //Many if-statements checking if there is a three-in-a-row with X and in that case increasing variable firstThreeRow
@@ -108,19 +119,16 @@ class ViewController: UIViewController {
     
     
     func onTurnTwo(buttonTwo: UIButton){
-        if(buttonTwo.currentTitle != "X" && buttonTwo.currentTitle != "O"){
-            buttonTwo.setTitle("O", for: .normal)
-            currentPlayer = 1
-        }
-        else{
-            forSeparateTest.text = String(currentPlayer) + "NO CLICKING ON THAT"
-        }
-        //Check if a clicked field already contains X or O. If not then it gets O
-        gameOverseer.text = "Player 1, your turn."
-        
-        //Many if-statements checking for a three-in-a-row with O and in that case increasing variable otherThreeRow
-        if(btnFirst.currentTitle == "O" && btnSecond.currentTitle == "O" && btnThird.currentTitle == "O"){
-            otherThreeRow += 1
+        if(firstThreeRow == 0 && otherThreeRow == 0){
+            if(buttonTwo.currentTitle != "X" && buttonTwo.currentTitle != "O"){
+                buttonTwo.setTitle("O", for: .normal)
+                currentPlayer = 1
+            }
+            else{
+                forSeparateTest.text = String(currentPlayer) + "NO CLICKING ON THAT"
+            }
+            //Check if a clicked field already contains X or O. If not then it gets O
+            gameOverseer.text = "Player 1, your turn."
         }
     }
     
@@ -198,7 +206,7 @@ class ViewController: UIViewController {
 
     
     
-    //Button Actions
+    //SPECIAL Button Actions
     
     @IBAction func pressOne(_ sender: Any) {
         checkPlayers(btn_OnClick: btnFirst)

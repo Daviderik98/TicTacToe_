@@ -104,6 +104,13 @@
                                     <action selector="pressNine:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B82-EM-JkT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="otherOne" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tS-ui-c2y">
+                                <rect key="frame" x="82" y="607" width="225" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -118,6 +125,7 @@
                         <outlet property="btnSeven" destination="5jf-wO-0Mr" id="rub-dR-0lv"/>
                         <outlet property="btnSix" destination="mRb-oJ-2Bc" id="1ms-Nn-4qh"/>
                         <outlet property="btnThird" destination="Wgc-MP-KzS" id="2HF-6y-9Oh"/>
+                        <outlet property="forSeparateTest" destination="4tS-ui-c2y" id="4WO-UZ-rGj"/>
                         <outlet property="gameOverseer" destination="AKZ-ht-e0W" id="7CN-aC-7IM"/>
                     </connections>
                 </viewController>
