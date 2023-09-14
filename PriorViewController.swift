@@ -8,6 +8,29 @@
 import UIKit
 
 class PriorViewController: UIViewController {
+    
+    //Components
+    
+    @IBOutlet weak var tfONE: UITextField!
+    
+    @IBOutlet weak var tfTWO: UITextField!
+    
+    
+    @IBOutlet weak var enterOne: UIButton!
+    
+    
+    @IBOutlet weak var enterTwo: UIButton!
+    
+    
+    @IBOutlet weak var nameCounter: UILabel!
+    
+    
+    
+    //Global variables
+    
+    var firstName: String = "Player 1"
+    var otherName: String = "Player 2"
+    var numberOfNames: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
