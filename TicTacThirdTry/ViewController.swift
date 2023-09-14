@@ -15,9 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var forSeparateTest: UILabel!
     
    
+    @IBOutlet weak var firstGamer: UILabel!
     
     
     
+    @IBOutlet weak var otherGamer: UILabel!
     
     
     
@@ -52,9 +54,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var btnNine: UIButton!
     
+        
     
-    
-    //Glocal Varialbes
+    //Global Varialbes
     
     //This will be set between 1 and 2. When 1 has had its turn, switch to 2.
     var currentPlayer: Int = 1
