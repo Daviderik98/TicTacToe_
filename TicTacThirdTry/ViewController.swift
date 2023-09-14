@@ -68,16 +68,37 @@ class ViewController: UIViewController {
     //Increase at 3-in-a-row
     var firstThreeRow: Int = 0
     var otherThreeRow: Int = 0
+    
+    var allTurns: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        firstGamer.text = firstPlayer
+        otherGamer.text = otherPlayer
+    }
+    
+    
+    
+    
+    //Segue-Prepare Function
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "toLastScreen"){
+            let lastDestination = segue.destination as! EndingViewController
+            
+            //lastDestination.firstPlayerName = firstPlayer
+            //lastDestination.otherPlayerName = otherPlayer
+            // lastDestination.victoryCaseOne = firstThreeRow
+            //lastDestination.victoryCaseTwo = otherThreeRow
+            
+        }
     }
 
     //Game-Logic Functions
     
     func checkPlayers(btn_OnClick: UIButton){
         //Check which Player has their turn. Then call on of two functions which will print out either X or O
+        
         switch(currentPlayer){
         case 1:
             onTurnOne(buttonOne: btn_OnClick)
@@ -91,10 +112,16 @@ class ViewController: UIViewController {
         
         if(firstThreeRow > 0){
             gameOverseer.text = "WE HAVE THE POWER"
+            allTurns = 9
         }
         
         if(otherThreeRow > 0){
             gameOverseer.text = "FORCE STRONG HERE"
+            allTurns = 9
+        }
+        
+        if(allTurns == 9){
+            performSegue(withIdentifier: "toLastScreen", sender: self)
         }
     }
     
@@ -103,6 +130,7 @@ class ViewController: UIViewController {
         if(firstThreeRow == 0 && otherThreeRow == 0){
             if(buttonOne.currentTitle != "X" && buttonOne.currentTitle != "O"){
                 buttonOne.setTitle("X", for: .normal)
+                allTurns += 1
                 currentPlayer = 2
                 
             }
@@ -124,6 +152,7 @@ class ViewController: UIViewController {
         if(firstThreeRow == 0 && otherThreeRow == 0){
             if(buttonTwo.currentTitle != "X" && buttonTwo.currentTitle != "O"){
                 buttonTwo.setTitle("O", for: .normal)
+                allTurns += 1
                 currentPlayer = 1
             }
             else{
@@ -197,15 +226,6 @@ class ViewController: UIViewController {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-
     
     
     //SPECIAL Button Actions

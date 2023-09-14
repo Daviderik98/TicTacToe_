@@ -11,8 +11,10 @@ class PriorViewController: UIViewController {
     
     //Components
     
+    @IBOutlet weak var lblOne: UILabel!
     @IBOutlet weak var tfONE: UITextField!
     
+    @IBOutlet weak var lblTwo: UILabel!
     @IBOutlet weak var tfTWO: UITextField!
     
     
@@ -30,15 +32,62 @@ class PriorViewController: UIViewController {
     
     var firstName: String = "Player 1"
     var otherName: String = "Player 2"
+    var nameOne: Int = 0
+    var nameTwo: Int = 0
     var numberOfNames: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        numberOfNames = nameOne + nameTwo
+        nameCounter.text = "X Names Selected"
         // Do any additional setup after loading the view.
     }
     
-
+    
+    
+    //Actions
+    
+    @IBAction func playerPressOne(_ sender: UIButton) {
+        firstName = tfONE.text!
+        lblOne.text = firstName
+        nameOne = 1
+        numberOfNames = nameOne + nameTwo
+        nameCounter.text = String(numberOfNames) + " Names Selected"
+    }
+    
+    
+    
+    
+    @IBAction func playerPressTwo(_ sender: UIButton) {
+        otherName = tfTWO.text!
+        lblTwo.text = otherName
+        nameTwo = 1
+        numberOfNames = nameOne + nameTwo
+        nameCounter.text = String(numberOfNames) + " Names Selected"
+    }
+    
+    
+    
+    
+    @IBAction func towardsTheGame(_ sender: UIButton) {
+        performSegue(withIdentifier: "toGameSession", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "toGameSession"){
+            let firstDestination = segue.destination as! ViewController
+            //Sending over the players names
+            firstDestination.firstPlayer = firstName
+            
+            firstDestination.otherPlayer = otherName
+        }
+    }
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
