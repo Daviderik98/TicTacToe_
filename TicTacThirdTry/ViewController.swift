@@ -76,6 +76,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         firstGamer.text = firstPlayer
         otherGamer.text = otherPlayer
+        onReset()
     }
     
     
@@ -86,10 +87,10 @@ class ViewController: UIViewController {
         if(segue.identifier == "toLastScreen"){
             let lastDestination = segue.destination as! EndingViewController
             
-            //lastDestination.firstPlayerName = firstPlayer
-            //lastDestination.otherPlayerName = otherPlayer
-            // lastDestination.victoryCaseOne = firstThreeRow
-            //lastDestination.victoryCaseTwo = otherThreeRow
+            lastDestination.firstPlayerName = firstPlayer
+            lastDestination.otherPlayerName = otherPlayer
+             lastDestination.victoryCaseOne = firstThreeRow
+            lastDestination.victoryCaseTwo = otherThreeRow
             
         }
     }
@@ -271,7 +272,17 @@ class ViewController: UIViewController {
     }
     
     
-    
+    func onReset(){
+        btnFirst.setTitle("", for: .normal)
+        btnSecond.setTitle("", for: .normal)
+        btnThird.setTitle("", for: .normal)
+        btnFour.setTitle("", for: .normal)
+        btnFive.setTitle("", for: .normal)
+        btnSix.setTitle("", for: .normal)
+        btnSeven.setTitle("", for: .normal)
+        btnEight.setTitle("", for: .normal)
+        btnNine.setTitle("", for: .normal)
+    }
     
 }
 
