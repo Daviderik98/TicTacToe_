@@ -76,7 +76,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         firstGamer.text = firstPlayer
         otherGamer.text = otherPlayer
-        onReset()
+        gameOverseer.text = firstPlayer + " goes first"
+        forSeparateTest.text = "Make your move"
     }
     
     
@@ -92,6 +93,7 @@ class ViewController: UIViewController {
              lastDestination.victoryCaseOne = firstThreeRow
             lastDestination.victoryCaseTwo = otherThreeRow
             
+            onReset()
         }
     }
 
@@ -112,12 +114,10 @@ class ViewController: UIViewController {
         otherThreeRow = checkThreeRowTwo()
         
         if(firstThreeRow > 0){
-            gameOverseer.text = "WE HAVE THE POWER"
             allTurns = 9
         }
         
         if(otherThreeRow > 0){
-            gameOverseer.text = "FORCE STRONG HERE"
             allTurns = 9
         }
         
@@ -136,10 +136,10 @@ class ViewController: UIViewController {
                 
             }
             else{
-                forSeparateTest.text = String(currentPlayer) + "YOU CANT CLICK THERE"
+                forSeparateTest.text = firstPlayer + ", YOU CANT CLICK THERE"
             }
             //Check if a clicked field already contains X or O. If not then it gets X
-            gameOverseer.text = "Player 2, your turn."
+            gameOverseer.text = otherPlayer + ", your turn."
         }
         
         
@@ -160,7 +160,7 @@ class ViewController: UIViewController {
                 forSeparateTest.text = String(currentPlayer) + "NO CLICKING ON THAT"
             }
             //Check if a clicked field already contains X or O. If not then it gets O
-            gameOverseer.text = "Player 1, your turn."
+            gameOverseer.text = firstPlayer + ", your turn."
         }
     }
     
@@ -225,6 +225,26 @@ class ViewController: UIViewController {
         return scoreTwo
     }
     
+    func onReset(){
+        //Reset the game to the starting point.
+        btnFirst.setTitle("", for: .normal)
+        btnSecond.setTitle("", for: .normal)
+        btnThird.setTitle("", for: .normal)
+        btnFour.setTitle("", for: .normal)
+        btnFive.setTitle("", for: .normal)
+        btnSix.setTitle("", for: .normal)
+        btnSeven.setTitle("", for: .normal)
+        btnEight.setTitle("", for: .normal)
+        btnNine.setTitle("", for: .normal)
+       
+        gameOverseer.text = firstPlayer + "goes first"
+        
+        allTurns = 0
+        
+        currentPlayer = 1
+        
+        forSeparateTest.text = "Make your move"
+    }
     
     
     
@@ -272,17 +292,7 @@ class ViewController: UIViewController {
     }
     
     
-    func onReset(){
-        btnFirst.setTitle("", for: .normal)
-        btnSecond.setTitle("", for: .normal)
-        btnThird.setTitle("", for: .normal)
-        btnFour.setTitle("", for: .normal)
-        btnFive.setTitle("", for: .normal)
-        btnSix.setTitle("", for: .normal)
-        btnSeven.setTitle("", for: .normal)
-        btnEight.setTitle("", for: .normal)
-        btnNine.setTitle("", for: .normal)
-    }
+   
     
 }
 
