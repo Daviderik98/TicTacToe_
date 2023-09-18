@@ -246,6 +246,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wins : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmQ-ni-gf1">
+                                <rect key="frame" x="130" y="133" width="138" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wins : " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lea-Zf-Jby">
+                                <rect key="frame" x="131" y="717" width="138" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -264,13 +278,15 @@
                         <outlet property="firstGamer" destination="3bR-m7-hv8" id="xkG-tf-44a"/>
                         <outlet property="forSeparateTest" destination="4tS-ui-c2y" id="4WO-UZ-rGj"/>
                         <outlet property="gameOverseer" destination="AKZ-ht-e0W" id="7CN-aC-7IM"/>
+                        <outlet property="nrWinsFirst" destination="hmQ-ni-gf1" id="oxO-FC-y3W"/>
+                        <outlet property="nrWinsOther" destination="Lea-Zf-Jby" id="JZn-Jv-mTf"/>
                         <outlet property="otherGamer" destination="AAG-4i-ZjE" id="bi3-wB-pU3"/>
                         <segue destination="hIa-QU-47b" kind="show" identifier="toLastScreen" id="KlY-1g-Rfy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1369" y="667"/>
+            <point key="canvasLocation" x="1368.7022900763359" y="666.90140845070425"/>
         </scene>
         <!--Ending View Controller-->
         <scene sceneID="zLA-n6-9k7">
@@ -280,8 +296,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CURRENT WINNER..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDr-0Y-BIK">
-                                <rect key="frame" x="55" y="198" width="292" height="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IT´S A DRAW BETWEEN BOTH PLAYERS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDr-0Y-BIK">
+                                <rect key="frame" x="41" y="202" width="310" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

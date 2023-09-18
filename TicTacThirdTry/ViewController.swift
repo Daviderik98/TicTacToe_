@@ -16,11 +16,14 @@ class ViewController: UIViewController {
     
    
     @IBOutlet weak var firstGamer: UILabel!
-    
-    
+
     
     @IBOutlet weak var otherGamer: UILabel!
+
+    @IBOutlet weak var nrWinsFirst: UILabel!
     
+    
+    @IBOutlet weak var nrWinsOther: UILabel!
     
     
     
@@ -57,6 +60,9 @@ class ViewController: UIViewController {
         
     
     //Global Varialbes
+    
+var victoriesFirst: Int = 0
+var victoriesOther: Int = 0
     
     //This will be set between 1 and 2. When 1 has had its turn, switch to 2.
     var currentPlayer: Int = 1
@@ -114,10 +120,14 @@ class ViewController: UIViewController {
         otherThreeRow = checkThreeRowTwo()
         
         if(firstThreeRow > 0){
+            victoriesFirst += 1
+            nrWinsFirst.text = "Wins : " + String(victoriesFirst)
             allTurns = 9
         }
         
         if(otherThreeRow > 0){
+            victoriesOther += 1
+            nrWinsOther.text = "Wins : " + String(victoriesOther)
             allTurns = 9
         }
         
