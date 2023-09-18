@@ -106,7 +106,7 @@ var victoriesOther: Int = 0
     //Game-Logic Functions
     
     func checkPlayers(btn_OnClick: UIButton){
-        //Check which Player has their turn. Then call on of two functions which will print out either X or O
+        //Check which Player has their turn. Then call one of two functions which will print out either X or O. Afterwards check for a winner or a draw, and if so navigate to last screen
         
         switch(currentPlayer){
         case 1:
@@ -138,6 +138,7 @@ var victoriesOther: Int = 0
     
     
     func onTurnOne(buttonOne: UIButton){
+        //Print out X in the clicked button if no current title
         if(firstThreeRow == 0 && otherThreeRow == 0){
             if(buttonOne.currentTitle != "X" && buttonOne.currentTitle != "O"){
                 buttonOne.setTitle("X", for: .normal)
@@ -160,6 +161,7 @@ var victoriesOther: Int = 0
     
     
     func onTurnTwo(buttonTwo: UIButton){
+        //Print out O in the clicked button if no current title
         if(firstThreeRow == 0 && otherThreeRow == 0){
             if(buttonTwo.currentTitle != "X" && buttonTwo.currentTitle != "O"){
                 buttonTwo.setTitle("O", for: .normal)
@@ -167,7 +169,7 @@ var victoriesOther: Int = 0
                 currentPlayer = 1
             }
             else{
-                forSeparateTest.text = String(currentPlayer) + "NO CLICKING ON THAT"
+                forSeparateTest.text = otherPlayer + ", NO CLICKING ON THAT"
             }
             //Check if a clicked field already contains X or O. If not then it gets O
             gameOverseer.text = firstPlayer + ", your turn."
@@ -175,8 +177,9 @@ var victoriesOther: Int = 0
     }
     
     
-    
+
     func checkThreeRowOne() -> Int{
+        //Checking for all possible 3-in-a-row as X
         var scoreOne: Int = 0
         if(btnFirst.currentTitle == "X" && btnSecond.currentTitle == "X" && btnThird.currentTitle == "X"){
             scoreOne += 1
@@ -207,6 +210,7 @@ var victoriesOther: Int = 0
     
     
     func checkThreeRowTwo() -> Int{
+        //Checking for all possible 3-in-a-row as O
         var scoreTwo: Int = 0
         if(btnFirst.currentTitle == "O" && btnSecond.currentTitle == "O" && btnThird.currentTitle == "O"){
             scoreTwo += 1
