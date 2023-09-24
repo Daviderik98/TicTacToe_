@@ -144,13 +144,13 @@ var victoriesOther: Int = 0
                 buttonOne.setTitle("X", for: .normal)
                 allTurns += 1
                 currentPlayer = 2
-                
+                gameOverseer.text = otherPlayer + ", your turn."
             }
             else{
                 forSeparateTest.text = firstPlayer + ", YOU CANT CLICK THERE"
             }
             //Check if a clicked field already contains X or O. If not then it gets X
-            gameOverseer.text = otherPlayer + ", your turn."
+            
         }
         
         
@@ -167,12 +167,13 @@ var victoriesOther: Int = 0
                 buttonTwo.setTitle("O", for: .normal)
                 allTurns += 1
                 currentPlayer = 1
+                gameOverseer.text = firstPlayer + ", your turn."
             }
             else{
                 forSeparateTest.text = otherPlayer + ", NO CLICKING ON THAT"
             }
             //Check if a clicked field already contains X or O. If not then it gets O
-            gameOverseer.text = firstPlayer + ", your turn."
+            
         }
     }
     
