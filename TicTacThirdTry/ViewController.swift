@@ -145,6 +145,7 @@ var victoriesOther: Int = 0
                 allTurns += 1
                 currentPlayer = 2
                 gameOverseer.text = otherPlayer + ", your turn."
+                forSeparateTest.text = String(allTurns)
             }
             else{
                 forSeparateTest.text = firstPlayer + ", YOU CANT CLICK THERE"
@@ -168,6 +169,7 @@ var victoriesOther: Int = 0
                 allTurns += 1
                 currentPlayer = 1
                 gameOverseer.text = firstPlayer + ", your turn."
+                forSeparateTest.text = String(allTurns)
             }
             else{
                 forSeparateTest.text = otherPlayer + ", NO CLICKING ON THAT"
@@ -258,7 +260,7 @@ var victoriesOther: Int = 0
         
         currentPlayer = 1
         
-        forSeparateTest.text = "Make your move"
+        forSeparateTest.text = String(allTurns)
     }
     
     

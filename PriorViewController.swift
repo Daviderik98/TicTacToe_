@@ -50,14 +50,16 @@ class PriorViewController: UIViewController {
     @IBAction func playerPressOne(_ sender: UIButton) {
         if(tfONE.text == ""){
             lblOne.text = "Player 1 it is then"
+            firstName = "Player 1"
+            nameOne = 0
         }
         else{
             firstName = tfONE.text!
             lblOne.text = firstName
             nameOne = 1
-            numberOfNames = nameOne + nameTwo
-            nameCounter.text = String(numberOfNames) + " Names Selected"
         }
+        numberOfNames = nameOne + nameTwo
+        nameCounter.text = String(numberOfNames) + " Names Selected"
     }
     
     
@@ -66,14 +68,16 @@ class PriorViewController: UIViewController {
     @IBAction func playerPressTwo(_ sender: UIButton) {
         if(tfTWO.text == ""){
             lblTwo.text = "Player 2 it is then"
+            otherName = "Player 2"
+            nameTwo = 0
         }
         else{
             otherName = tfTWO.text!
             lblTwo.text = otherName
             nameTwo = 1
-            numberOfNames = nameOne + nameTwo
-            nameCounter.text = String(numberOfNames) + " Names Selected"
         }
+        numberOfNames = nameOne + nameTwo
+        nameCounter.text = String(numberOfNames) + " Names Selected"
     }
     
     
