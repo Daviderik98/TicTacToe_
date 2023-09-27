@@ -101,11 +101,13 @@ var victoriesOther: Int = 0
             
             onReset()
         }
+        
     }
 
     //Game-Logic Functions
     
     func checkPlayers(btn_OnClick: UIButton){
+        
         //Check which Player has their turn. Then call one of two functions which will print out either X or O. Afterwards check for a winner or a draw, and if so navigate to last screen
         
         switch(currentPlayer){
@@ -133,6 +135,7 @@ var victoriesOther: Int = 0
         
         if(allTurns == 9){
             performSegue(withIdentifier: "toLastScreen", sender: self)
+            //onReset()
         }
     }
     
@@ -148,6 +151,7 @@ var victoriesOther: Int = 0
                 forSeparateTest.text = String(allTurns)
             }
             else{
+                firstGamer.text = "FAILURE ONE"
                 forSeparateTest.text = firstPlayer + ", YOU CANT CLICK THERE"
             }
             //Check if a clicked field already contains X or O. If not then it gets X
@@ -257,7 +261,8 @@ var victoriesOther: Int = 0
         gameOverseer.text = firstPlayer + "goes first"
         
         allTurns = 0
-        
+        firstThreeRow = 0
+        otherThreeRow = 0
         currentPlayer = 1
         
         forSeparateTest.text = String(allTurns)
